@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADP Peniel - Gurupi/TO</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- NAVEGAÇÃO PRINCIPAL -->
+    <header id="navbar">
+        <div class="logo">
+            <img src="https://i.postimg.cc/85zXp9mX/image.png" alt="ADP Peniel">
+        </div>
+        <nav class="nav-right">
+            <a href="#avisos-publicos" class="nav-link">Avisos</a>
+            <button class="btn-membro-top" onclick="abrirModalLogin()">
+                <i class="fas fa-user-circle"></i> <span>ÁREA DO MEMBRO</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- CONTEÚDO PÚBLICO -->
+    <div id="site-publico">
+        
+        <section class="hero-section">
+            <div class="hero-badge"><i class="fas fa-location-dot"></i> Gurupi - Tocantins</div>
+            <h1>ADP PENIEL</h1>
+            <p>Um lugar de encontro face a face com a glória de Deus.</p>
+        </section>
+
+        <!-- CARDS DE ACESSO RÁPIDO -->
+        <section class="quick-cards-section">
+            <div class="container-cards">
+                <div class="quick-card" onclick="abrirModalCultos()">
+                    <div class="card-icon blue"><i class="fas fa-calendar-days"></i></div>
+                    <h3>Dias de Culto</h3>
+                    <p>Terça, Sexta e Domingo às 19:30h</p>
+                    <span class="card-link">Ver horários <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="quick-card" onclick="abrirModalLive()">
+                    <div class="card-icon red"><i class="fas fa-video"></i></div>
+                    <h3>Culto ao Vivo</h3>
+                    <p>Assista nossas transmissões online</p>
+                    <span class="card-link">Assistir agora <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="quick-card" onclick="abrirModalPix()">
+                    <div class="card-icon green"><i class="fa-brands fa-pix"></i></div>
+                    <h3>Contribuição</h3>
+                    <p>Dízimos e Ofertas via PIX</p>
+                    <span class="card-link">Ofertar <i class="fas fa-arrow-right"></i></span>
+                </div>
+
+                <div class="quick-card" onclick="abrirModalOracao()">
+                    <div class="card-icon purple"><i class="fas fa-hands-praying"></i></div>
+                    <h3>Pedido de Oração</h3>
+                    <p>Envie sua petição para a equipe</p>
+                    <span class="card-link">Enviar pedido <i class="fas fa-arrow-right"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- MURAL DE AVISOS -->
+        <section class="section-container" id="avisos-publicos">
+            <h2 class="section-title"><i class="fas fa-bullhorn"></i> Mural de Avisos</h2>
+            <div id="muralPublico" class="avisos-grid"></div>
+        </section>
+
+        <!-- RODAPÉ -->
+        <footer class="footer">
+            <div class="footer-info">
+                <h3>ASSEMBLEIA DE DEUS PENIEL</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Av. Rio Grande do Norte (entre 17 e 18) - Setor Leste - Gurupi/TO</p>
+                <p><i class="fa-brands fa-pix"></i> Chave PIX (CPF): 999.869.731-04</p>
+            </div>
+            <p class="copy">&copy; 2026 ADP Peniel - Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- ÁREA EXCLUSIVA DO MEMBRO -->
+    <div id="area-membro" class="member-app-container" style="display: none;">
+        
+        <aside class="sidebar">
+            <div class="user-card">
+                <div class="user-avatar"><i class="fas fa-user"></i></div>
+                <div class="user-details">
+                    <h4 id="membroNome">Nome do Membro</h4>
+                    <span>Membro Ativo</span>
+                </div>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <button class="side-btn active" onclick="navegarMembro('m-ao-vivo')"><i class="fas fa-tv"></i> <span>Culto ao Vivo</span></button>
+                <button class="side-btn" onclick="navegarMembro('m-pix')"><i class="fa-brands fa-pix"></i> <span>Contribuição</span></button>
+                <button class="side-btn" onclick="navegarMembro('m-leitura')"><i class="fas fa-book-open"></i> <span>Plano de Leitura</span></button>
+                <button class="side-btn" onclick="navegarMembro('m-oracao')"><i class="fas fa-hands-praying"></i> <span>Oração</span></button>
+                <button class="side-btn" onclick="navegarMembro('m-radio')"><i class="fas fa-radio"></i> <span>Rádio Web</span></button>
+                <button class="side-btn" onclick="navegarMembro('m-avisos')"><i class="fas fa-bell"></i> <span>Avisos</span></button>
+                <button class="side-btn" onclick="navegarMembro('m-devocional')"><i class="fas fa-heart"></i> <span>Devocional</span></button>
+            </nav>
+
+            <button class="btn-logout" onclick="logoutMembro()"><i class="fas fa-right-from-bracket"></i> <span>Sair</span></button>
+        </aside>
+
+        <main class="member-main-content">
+            <div id="m-ao-vivo" class="tab-content active">
+                <h2><i class="fas fa-tv"></i> Transmissão Culto ao Vivo</h2>
+                <div class="video-container">
+                    <iframe src="https://www.youtube.com/embed/live_stream?channel=ID_DO_SEU_CANAL" frameborder="0" allowfullscreen></iframe>
+                </div>
+            </div>
+
+            <div id="m-pix" class="tab-content">
+                <h2><i class="fa-brands fa-pix"></i> Dízimos e Ofertas</h2>
+                <div class="pix-box">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=99986973104" alt="QR Code PIX">
+                    <p class="pix-key">CPF: <strong>999.869.731-04</strong></p>
+                    <button class="btn-copy" onclick="copiarChavePix()"><i class="fas fa-copy"></i> Copiar Chave PIX</button>
+                </div>
+            </div>
+
+            <div id="m-leitura" class="tab-content">
+                <h2><i class="fas fa-book-open"></i> Plano de Leitura Bíblica</h2>
+                <p>Marque os capítulos conforme for concluindo a leitura diária:</p>
+                <div id="listaPlanoLeitura" class="checklist-container"></div>
+            </div>
+
+            <div id="m-oracao" class="tab-content">
+                <h2><i class="fas fa-hands-praying"></i> Caixa de Pedido de Oração</h2>
+                <form id="formOracaoMembro" class="form-box">
+                    <label>Seu Pedido de Oração</label>
+                    <textarea id="textoOracaoMembro" placeholder="Escreva aqui suas petições..." required></textarea>
+                    <button type="submit" class="btn-action"><i class="fab fa-whatsapp"></i> Enviar Pedido</button>
+                </form>
+            </div>
+
+            <div id="m-radio" class="tab-content">
+                <h2><i class="fas fa-radio"></i> Rádio Web & Louvores</h2>
+                <div class="radio-card">
+                    <div class="radio-icon"><i class="fas fa-music"></i></div>
+                    <h3>Rádio Louvor Peniel</h3>
+                    <p>Acompanhe hinos e mensagens 24 horas.</p>
+                    <audio controls style="width: 100%; margin-top: 15px;">
+                        <source src="https://stream.zeno.fm/f3wvbbqmdg8uv" type="audio/mpeg">
+                    </audio>
+                </div>
+            </div>
+
+            <div id="m-avisos" class="tab-content">
+                <h2><i class="fas fa-bell"></i> Avisos Internos</h2>
+                <div id="muralMembro" class="avisos-grid"></div>
+            </div>
+
+            <div id="m-devocional" class="tab-content">
+                <h2><i class="fas fa-heart"></i> Devocional Diário</h2>
+                <div class="devocional-card">
+                    <span id="devData">Hoje</span>
+                    <h3 id="devTitulo">Fortalecidos no Senhor</h3>
+                    <p id="devTexto">"O Senhor é a minha força e o meu escudo; nele o meu coração confia, e dele recebo ajuda."</p>
+                    <strong id="devRef">Salmos 28:7</strong>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- MODAIS DO SITE PÚBLICO -->
+    <div id="modalLogin" class="modal-backdrop">
+        <div class="modal-box">
+            <button class="modal-close" onclick="fecharModais()">&times;</button>
+            <h2>Área do Membro</h2>
+            <div class="modal-tabs">
+                <button id="tabBtnLogin" class="tab-btn active" onclick="alternarTabAuth('login')">Entrar</button>
+                <button id="tabBtnCad" class="tab-btn" onclick="alternarTabAuth('cad')">Cadastrar</button>
+            </div>
+            <form id="formLogin" onsubmit="executarLogin(event)">
+                <input type="email" id="loginEmail" placeholder="E-mail" required>
+                <input type="password" id="loginSenha" placeholder="Senha" required>
+                <button type="submit" class="btn-action">ACESSAR PAINEL</button>
+            </form>
+            <form id="formCad" style="display: none;" onsubmit="executarCadastro(event)">
+                <input type="text" id="cadNome" placeholder="Nome Completo" required>
+                <input type="email" id="cadEmail" placeholder="E-mail" required>
+                <input type="password" id="cadSenha" placeholder="Senha" required>
+                <button type="submit" class="btn-action">CRIAR CONTA</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="modalCultos" class="modal-backdrop">
+        <div class="modal-box">
+            <button class="modal-close" onclick="fecharModais()">&times;</button>
+            <h2><i class="fas fa-calendar-days"></i> Dias de Culto</h2>
+            <div class="culto-list">
+                <div class="culto-row"><span>TERÇA-FEIRA</span> <strong>Culto de Ensino • 19:30h</strong></div>
+                <div class="culto-row"><span>SEXTA-FEIRA</span> <strong>Culto de Libertação • 19:30h</strong></div>
+                <div class="culto-row highlight"><span>DOMINGO</span> <strong>Culto da Família • 19:30h</strong></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalLive" class="modal-backdrop">
+        <div class="modal-box large">
+            <button class="modal-close" onclick="fecharModais()">&times;</button>
+            <h2><i class="fas fa-video"></i> Transmissão ao Vivo</h2>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/live_stream?channel=ID_DO_SEU_CANAL" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalPix" class="modal-backdrop">
+        <div class="modal-box">
+            <button class="modal-close" onclick="fecharModais()">&times;</button>
+            <h2><i class="fa-brands fa-pix"></i> Contribuição PIX</h2>
+            <div class="pix-box">
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=99986973104" alt="QR Code PIX">
+                <p class="pix-key">CPF: <strong>999.869.731-04</strong></p>
+                <button class="btn-copy" onclick="copiarChavePix()"><i class="fas fa-copy"></i> Copiar Chave PIX</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="modalOracao" class="modal-backdrop">
+        <div class="modal-box">
+            <button class="modal-close" onclick="fecharModais()">&times;</button>
+            <h2><i class="fas fa-hands-praying"></i> Pedido de Oração</h2>
+            <form id="formOracaoPublico" onsubmit="enviarOracaoPublica(event)">
+                <input type="text" id="oracaoNome" placeholder="Seu Nome (Opcional)">
+                <textarea id="oracaoTexto" placeholder="Escreva seu motivo de oração..." required></textarea>
+                <button type="submit" class="btn-action"><i class="fab fa-whatsapp"></i> Enviar Pedido</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
